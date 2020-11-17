@@ -1,6 +1,17 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "bootstrap/dist/css/bootstrap.css";
-import App from "./App";
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import axios from 'axios'
 
-ReactDOM.render(<App />, document.getElementById("root"));
+import { store } from './store'
+import Routes from './routes'
+import './styles/app.scss'
+
+axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URI
+
+ReactDOM.render(
+  <Provider store={store}>
+    <Routes />
+  </Provider>,
+  document.getElementById('root')
+)

@@ -1,14 +1,13 @@
-import React from "react";
-import "../App.css";
-import { Link } from "react-router-dom";
-import Login from "../pages/Login";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import Login from '../pages/Login'
 
 function NavBar() {
   return (
     <React.Fragment>
       <nav className="navbar navbar-expand-lg navbar-light">
         <Link to="/" className="navbar-brand" href="#">
-          <img src={process.env.PUBLIC_URL + "/logo.svg"} alt="logo" />
+          <img src={process.env.PUBLIC_URL + '/logo.svg'} alt="logo" />
         </Link>
         <button
           className="navbar-toggler"
@@ -33,7 +32,7 @@ function NavBar() {
         </div>
       </nav>
     </React.Fragment>
-  );
+  )
 }
 
-export default NavBar;
+export default NavBar

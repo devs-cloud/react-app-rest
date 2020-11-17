@@ -1,26 +1,28 @@
-import React, { useState } from "react";
-import { Modal, Button } from "react-bootstrap";
+import React, { useState } from 'react'
+import { Modal, Button } from 'reactstrap'
 
-function Login() {
-  const [show, setShow] = useState(false);
+const Login = () => {
+  const [show, setShow] = useState(false)
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
   const handleLogin = () => {
-    fetch(`http://localhost:8080/agents/2/listings`)
-      .then((res) => res.json())
-      .then((allListings) => {
-        console.log(allListings);
-      });
-    console.log("login");
-    setShow(false);
-  };
+    // fetch(`http://localhost:8080/agents/2/listings`)
+    //   .then((res) => res.json())
+    //   .then((allListings) => {
+    //     console.log(allListings)
+    //   })
+    console.log('login')
+    setShow(false)
+  }
+
   return (
     <>
-      <a className="nav-link text-muted my-2 my-lg-0" href="#">
+      <a className="nav-link text-muted my-2 my-lg-0">
         <div onClick={handleShow}>Login</div>
       </a>
-      <Modal show={show} onHide={handleClose}>
+
+      {/* <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Login to your account</Modal.Title>
         </Modal.Header>
@@ -42,9 +44,9 @@ function Login() {
             Login
           </Button>
         </Modal.Footer>
-      </Modal>
+      </Modal> */}
     </>
-  );
+  )
 }
 
-export default Login;
+export default Login
