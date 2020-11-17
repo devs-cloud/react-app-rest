@@ -17,7 +17,7 @@ const Login = () => {
   }
 
   return (
-    <>
+    <div>
       <a className="nav-link text-muted my-2 my-lg-0">
         <div onClick={handleShow}>Login</div>
       </a>
@@ -45,7 +45,7 @@ const Login = () => {
           </Button>
         </Modal.Footer>
       </Modal> */}
-    </>
+    </div>
   )
 }
 
