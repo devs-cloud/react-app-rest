@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import PropertyContainer from '../components/propertyContainer'
+import PropertyContainer from 'containers/propertyContainer'
 
 class Listing extends Component {
   state = {

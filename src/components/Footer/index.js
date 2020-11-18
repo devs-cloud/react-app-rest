@@ -4,6 +4,6 @@ const Footer = () => (
       <span className="text-muted">2020 Offer1 all rights reserved.</span>
     </div>
   </footer>
-);
+)
 
-export default Footer;
+export default Footer
