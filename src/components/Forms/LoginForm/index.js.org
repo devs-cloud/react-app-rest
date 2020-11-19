@@ -1,0 +1,97 @@
+import React, { useState, useEffect } from 'react';
+import { Modal, ModalHeader, ModalBody, ModalFooter, Button, Input, Container, Row, Col } from 'reactstrap';
+import styles from './styles.module.scss'
+
+const Login = () => {
+  const [show, setShow] = useState(true)
+
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
+  const handleLogin = () => {
+    // fetch(`http://localhost:8080/agents/2/listings`)
+    //   .then((res) => res.json())
+    //   .then((allListings) => {
+    //     console.log(allListings)
+    //   })
+    setShow(false)
+  }
+
+  useEffect(() => {
+    console.log('show++++++++++++++++', show);
+  }, [show])
+
+  return (
+    // <div className={styles['modal']}>
+      /* <a className="nav-link text-muted my-2 my-lg-0">
+        <div onClick={handleShow}>Signin</div>
+      </a> */
+      <Modal className={styles['modal']} tabindex="-1" isOpen={show} toggle={handleClose}>
+        {/* <div className="modal-header"> */}
+        <ModalHeader className="modal-header">
+          {/* <Row>
+            <Col xs="6" style={{textAlign: 'center'}}> */}
+              <h5 className="modal-title w-100 text-center">Sign In</h5>
+              {/* <div className={styles['modal__header']}>Sign In</div> */}
+            {/* </Col>
+          </Row> */}
+        </ModalHeader>
+        <ModalBody className={styles['modal__content']}>
+          {/* <div className={styles['modal__content']}> */}
+            <Container fluid="sm" >
+              <Row>
+                <Col sm="12" md={{size: 6, offset: 5}}>Username</Col>
+              </Row>
+              <Row>
+                <Col><Input type="text" name="username" /></Col>                
+              </Row>
+              <Row>
+                <Col sm="12" md={{size: 6, offset: 5}}>Password</Col>
+              </Row>
+              <Row>
+                <Col><Input type="password" name="password" /></Col>
+              </Row>
+              <Row>
+                <Col sm="12" md={{size: 6, offset: 4}}>
+                  <Button color="info">Continue</Button>
+                </Col>                
+              </Row>
+            </Container>
+            <Container>
+              <Row>
+                <Col sm="12" md={{size: 6, offset: 4}}>Create an Account</Col>
+              </Row>
+              <Row>
+                <Row>
+                  <Col sm="12" md={{size: 12, offset: 2}}>
+                    <Button outline color="info">Real Estate Agent</Button>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col sm="12" md={{size: 12, offset: 5}}>
+                    <Button outline color="info">Home Buyer or Seller</Button>
+                  </Col>
+                </Row>
+              </Row>
+              {/* <Row><a>Forgot your password? Click here to start the reset flow.</a></Row> */}
+            </Container>
+          {/* </div> */}
+        </ModalBody>
+        <ModalFooter>
+          <Row>
+            {/* <Col sm="12" md={{size: 6, offset: 5}}> */}
+              <a>Forgot your password? Click here to start the reset flow.</a>
+            {/* </Col> */}
+          </Row>
+          <Button color="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button color="primary" onClick={handleLogin}>
+            Login
+          </Button>
+        </ModalFooter>
+      </Modal>
+    // </div>
+  )
+}
+
+export default Login

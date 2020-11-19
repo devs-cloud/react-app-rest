@@ -1,52 +1,53 @@
-import React, { useState } from 'react'
-import { Modal, Button } from 'reactstrap'
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Form, FormGroup, Label, FormText, Input, Col, Row } from 'reactstrap';
+import Button from 'components/Button'
+
+import styles from './styles.module.scss'
 
 const Login = () => {
-  const [show, setShow] = useState(false)
+    return (
+      <div  className={styles['form-container']}>
+        <Form>
+          <div className={styles['form-header']}>
+            <Label>Sign In</Label>
+          </div>
+          <div className={styles['form-content']}>
+            <FormGroup>
+              <Label>Username</Label>
+              <Input></Input>
+            </FormGroup>
+            <FormGroup>
+              <Label>Password</Label>
+              <Input></Input>
+            </FormGroup>
+            <FormGroup>
+              <Button color="primary" size="lg">Continue</Button>
+            </FormGroup>
+          </div>
+          <div>
+            <FormGroup className={styles['form-buttons']}>
+              <Row> <h1>Create an Account: </h1> </Row>
+              <Link >
+                <Button color="primary" size="lg">Real Estate Agent</Button>
+              </Link>
+              <Link>
+                <Button color="primary" size="lg">Home Buyer or Seller</Button>
+              </Link>
+            </FormGroup>            
+          </div>
+          <div className={styles['form-footer']}>
+            <Link>Forgot your password? Click here to start the reset flow.</Link>
+          </div>
 
-  const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
-  const handleLogin = () => {
-    // fetch(`http://localhost:8080/agents/2/listings`)
-    //   .then((res) => res.json())
-    //   .then((allListings) => {
-    //     console.log(allListings)
-    //   })
-    console.log('login')
-    setShow(false)
-  }
+          {/* <Row>
+            <Button></Button>
+          </Row> */}
 
-  return (
-    <div>
-      <a className="nav-link text-muted my-2 my-lg-0">
-        <div onClick={handleShow}>Login</div>
-      </a>
-
-      {/* <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Login to your account</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <label>
-            Username:
-            <input type="text" name="username" />
-          </label>
-          <label>
-            Password:
-            <input type="password" name="password" />
-          </label>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleLogin}>
-            Login
-          </Button>
-        </Modal.Footer>
-      </Modal> */}
-    </div>
-  )
+          {/* </FormGroup> */}
+        </Form>
+      </div>
+    )
 }
 
 export default Login
